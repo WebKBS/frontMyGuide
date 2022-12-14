@@ -1,15 +1,43 @@
 function LoadingScreen(text = null) {
-  document.getElementById('loading').classList.add('show');
-  return text === null ? (document.getElementById('LoadingText').textContent = '') : (document.getElementById('LoadingText').textContent = text);
+    AddElement();
+    document.getElementById('loading').style.cssText = `
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0,0,0, .7);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    `;
+    document.querySelector('#loading svg').style.cssText = `
+    width: 154px;
+    height: 154px;
+    `;
+    document.getElementById('LoadingText').style.cssText = `
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: inherit;
+    white-space: pre;
+    text-align: center;
+    line-height: 1.5;
+
+    `;
+
+    if (text === null) (document.getElementById('LoadingText').textContent = '')
+    else (document.getElementById('LoadingText').textContent = text);
 }
 
 function UnLoadingScreen() {
-  document.getElementById('loading').classList.remove('show');
-  document.getElementById('LoadingText').textContent = '';
+    document.getElementById('loading').remove();
 }
 
 function AddElement() {
-  const Element = `
+    const Element = `
   <div class="loading" id="loading">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" background: rgba(97, 97, 97, 0); display: block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
     <circle cx="75" cy="50" fill="#97f0ff" r="5">
@@ -53,7 +81,7 @@ function AddElement() {
     <p id="LoadingText"></p>
   </div>`;
 
-  return document.body.insertAdjacentHTML('beforeend', Element);
+    if (document.getElementById('loading')) return;
+    return document.body.insertAdjacentHTML('beforeend', Element);
 }
 
-window.addEventListener('DOMContentLoaded', AddElement);
