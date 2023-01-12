@@ -111,3 +111,22 @@ a의 pathname의 문자열 index값이 있으면 1을 반환하기에
 생각보다 간단하다.
 
 Spring, asp.net core 등 layout을 사용하는 html파일에 유용하게 쓸수있다.
+
+
+
+### 매개 변수를 이용해서 쓰자.
+
+```javascript
+function linkMatchPathName(naviSelect) {
+    const naviElement = document.querySelectorAll(naviSelect);
+    const windowPathName = window.location.pathname.toLowerCase().split("/")[2];
+
+    naviElement.forEach(ev => {
+        ev.classList.remove('mm-active');
+        if (ev.pathname.toLowerCase().split("/")[2] === windowPathName && ev.getAttribute("href") !== "#") {
+            ev.classList.add('mm-active');
+            ev.parentElement.classList.add('mm-active');
+        }
+    })
+}
+```
