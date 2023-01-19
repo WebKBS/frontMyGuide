@@ -130,3 +130,58 @@ function linkMatchPathName(naviSelect) {
     })
 }
 ```
+
+
+
+
+
+### Pathname 2개일때 앞부분만 잘라서 쓰기.
+
+```javascript
+﻿/** 
+ * 
+ * PathName에 맞춰 네비게이션 active 클래스 추가하는 함수
+ 
+ * 
+ * @param {string} naviSelect - 네비게이션 선택자
+ * @param {string} windowTitle - 타이틀에서 빼고싶은 문자열
+ * @param {string} printTitle - 출력하고싶은 타이틀
+ * 
+*/
+function linkMatchPathName(naviSelect, windowTitle, printTitle) {
+    const naviElement = document.querySelectorAll(naviSelect);
+    const firstPath = window.location.pathname.toLowerCase().split("/")[1]
+    const secondPath = window.location.pathname.toLowerCase().split("/")[2]
+    const windowPathName = firstPath + '/' + secondPath;
+    
+
+    naviElement.forEach(ev => {
+        ev.classList.remove('mm-active');
+        const firstHref = ev.pathname.toLowerCase().split("/")[1];
+        const secondHref = ev.pathname.toLowerCase().split("/")[2];
+        const allHref = firstHref + '/' + secondHref;
+        
+        if (allHref === windowPathName && ev.getAttribute("href") !== "#") {
+            ev.classList.add('mm-active');
+            ev.parentElement.classList.add('mm-active')
+            windowTitlePrint(windowTitle, printTitle);
+        } else {
+            windowTitlePrint(windowTitle, printTitle);
+        }
+    })
+}
+
+
+/**
+ * document title 글자를 원하는 엘리먼트에 텍스트 추가하는 함수
+ * @param {string} windowTitle - 타이틀에서 빼고싶은 문자열
+ * @param {string} printTitle - 출력하고싶은 타이틀
+ * 
+ */
+function windowTitlePrint(windowTitle ,printTitle) {
+    const documentTitle = document.title.split(windowTitle).filter(remove => remove !== "");
+    const title = document.querySelector(printTitle);
+    title.textContent = documentTitle;
+}
+```
+
