@@ -6,3 +6,4 @@
 * [JS 카운터 애니메이션 만들기](js.md)
 * [JS window pathname 사용](js-window-pathname.md)
 * [HTML](https://beomsu-kang.gitbook.io/html/)
+* [Javscript 비속어 필터링 만들기 TXT파일](javscript-txt.md)
