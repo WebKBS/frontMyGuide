@@ -106,7 +106,31 @@ input.addEventListener('change', () => {
 
 
 
+## 위 예문에서 for of 문 대신 filter로 교체해서 사용하기
 
+input 이벤트 리스너만 교체해주면 된다.
+
+```javascript
+
+input.addEventListener('change', () => {
+  // for(text of filterArray){
+  //   if(input.value.toLowerCase().indexOf(text.toLowerCase()) > -1){
+  //     alert("비속어가 감지되었습니다: " + text)
+  //     return;
+  //   }
+  // }
+  const arr = filterArray.filter(text => {
+    let value = input.value.indexOf(text) > -1;
+    return value;
+  });
+  if(arr.length > 0){
+    alert('비속어가 감지되었습니다')
+    return;
+  }
+})
+```
+
+{% embed url="https://codepen.io/publisherkang/pen/xxJjWEy" %}
 
 {% file src=".gitbook/assets/fword_list.txt" %}
 
