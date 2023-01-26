@@ -61,8 +61,51 @@ input의 change이벤트 안에value값에 따라 필터링 되는 값을 변수
 
 filter를 커스텀해서 원하는 필터링을 할 수 있다.
 
-{% file src=".gitbook/assets/fword_list.txt" %}
-
 {% embed url="https://codepen.io/publisherkang/pen/MWBGQme" %}
 
+##
+
+## TXT파일에 포함된 단어를 검증하기
+
+### 조금더 정확한 문자 일치 및 비속어 포함 장문도 필터링하는 방법.
+
+```javascript
+let content = null;
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "../폴더명/파일명.txt", false); 
+// 로컬 주소는 폴더위치에따라 달라질수 있다.
+xmlhttp.send();
+
+if (xmlhttp.status == 200) {
+    content = xmlhttp.responseText;
+}
+
+// 가져온 파일의 공백을 지우고 배열로 변환해서 변수에 담기
+const filterArray = content.split('\n');
+
+```
+
+위와 같다.
+
+```javascript
+input.addEventListener('change', () => {
+  for(text of filterArray){
+    if(input.value.toLowerCase().indexOf(text.toLowerCase()) > -1){
+      console.log(text)
+    }
+  }
+})
+// 파일의 문자열을 불러와 매칭시킨다.
+
+```
+
+{% embed url="https://codepen.io/publisherkang/pen/ZEjormK" %}
+
+원하는 필터링 조합에따라 커스텀이 가능하다!.
+
+
+
+
+
 {% file src=".gitbook/assets/fword_list.txt" %}
+
