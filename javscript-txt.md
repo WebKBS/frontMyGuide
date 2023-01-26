@@ -92,6 +92,7 @@ input.addEventListener('change', () => {
   for(text of filterArray){
     if(input.value.toLowerCase().indexOf(text.toLowerCase()) > -1){
       console.log(text)
+      return;
     }
   }
 })
