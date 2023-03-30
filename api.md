@@ -68,7 +68,7 @@ function geoError(error) {
 document.getElementById('locationBtn').addEventListener('click', () => {
 
     // geolocation 사용 가능 여부를 조건문으로 확인하여 사용 여부를 판단한다.
-    if ("geolocation" in navigator) {
+    if ("geolocation" in navigator) { // navigator.geolocation 으로 대체 가능
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
     } else {
         // Geolocation API 사용 불가능시 경고창
