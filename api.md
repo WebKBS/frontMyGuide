@@ -76,3 +76,5 @@ document.getElementById('locationBtn').addEventListener('click', () => {
     }
 })
 ```
+
+### !!! 중요. 현재 모바일 웹 브라우저에서 사용자 위치 정보를 설정하게 만드는 것은 불가능하다. (모바일  위치기반이서비스는 네이티브 기술만 가능.)
