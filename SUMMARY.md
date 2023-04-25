@@ -13,6 +13,7 @@
 * [모달 열고 닫기 class 문법으로 만들기](class.md)
 * [사이드 메뉴 열고 닫을때 body hidden](body-hidden.md)
 * [Select Custom](select-custom.md)
+* [JS로 1000단위 이상 k로 변경방법](js-1000-k.md)
 * [HTML](https://beomsu-kang.gitbook.io/html/)
 * [CSS](http://localhost:5000/s/Y9iCnUhM8hctKsJhuG0I/)
 * [Javascript](https://beomsu-kang.gitbook.io/javascript/)
