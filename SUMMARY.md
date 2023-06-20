@@ -14,6 +14,8 @@
 * [사이드 메뉴 열고 닫을때 body hidden](body-hidden.md)
 * [Select Custom](select-custom.md)
 * [JS로 1000단위 이상 k로 변경방법](js-1000-k.md)
+* [TypeScript](typescript/README.md)
+  * [clipboard](typescript/clipboard.md)
 * [HTML](https://beomsu-kang.gitbook.io/html/)
 * [CSS](http://localhost:5000/s/Y9iCnUhM8hctKsJhuG0I/)
 * [Javascript](https://beomsu-kang.gitbook.io/javascript/)
