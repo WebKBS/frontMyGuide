@@ -9,6 +9,7 @@ description: 타입스크립트로 input 텍스트 clipboard로 복사하는 방
 ```html
 <input type="text" id="copyText" value="안녕하세요" readonly/>
 <button type="button" id="copyBtn">Copy</button>
+<p id="copyMessage"></p>
 ```
 
 ### Typescript
@@ -24,7 +25,7 @@ description: 타입스크립트로 input 텍스트 clipboard로 복사하는 방
         .then(() => {
             // 복사 성공 메시지 표시 
             const copyMessage = document.getElementById("copyMessage");
-            showMessage(copyMessage, "Referral code copied.");
+            showMessage(copyMessage, "copied.");
         })
         .catch((error) => {
             // 복사 실패 메시지 표시 
