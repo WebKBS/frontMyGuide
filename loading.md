@@ -14,7 +14,7 @@ append 사용시 중복 생성이 있어서 HTML코드를 바로 삽입하는 �
 
 ```javascript
 function AddElement() {
-    const Element = `
+  const Element = `
   <div class="loading" id="loading">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" background: rgba(97, 97, 97, 0); display: block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
     <circle cx="75" cy="50" fill="#97f0ff" r="5">
@@ -58,9 +58,9 @@ function AddElement() {
     <p id="LoadingText"></p>
   </div>`;
 
-    if (document.getElementById('loading')) return;
-    return document.body.insertAdjacentHTML('beforeend', Element);
+  return document.body.insertAdjacentHTML('beforeend', Element);
 }
+
 ```
 
 
@@ -79,14 +79,16 @@ css 파일을 따로 만들지 않기위해 cssText 매서드를 사용해서 �
 
 ```javascript
 function LoadingScreen(text = null) {
-    AddElement();
-    document.getElementById('loading').style.cssText = `
+  if (document.getElementById('loading')) return; // id가 없으면 리턴
+
+  AddElement();
+  document.getElementById('loading').style.cssText = `
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1200;
     background: rgba(0,0,0, .7);
     display: flex;
     flex-direction: column;
@@ -94,11 +96,11 @@ function LoadingScreen(text = null) {
     justify-content: center;
     align-items: center;
     `;
-    document.querySelector('#loading svg').style.cssText = `
+  document.querySelector('#loading svg').style.cssText = `
     width: 154px;
     height: 154px;
     `;
-    document.getElementById('LoadingText').style.cssText = `
+  document.getElementById('LoadingText').style.cssText = `
     color: #fff;
     font-size: 1.2rem;
     font-family: inherit;
@@ -108,8 +110,8 @@ function LoadingScreen(text = null) {
 
     `;
 
-    if (text === null) (document.getElementById('LoadingText').textContent = '')
-    else (document.getElementById('LoadingText').textContent = text);
+  if (text === null) document.getElementById('LoadingText').textContent = '';
+  else document.getElementById('LoadingText').textContent = text;
 }
 // 파라미터로 텍스트가 없으면 텍스트를 내보내지 않는다.
 ```
@@ -118,11 +120,12 @@ function LoadingScreen(text = null) {
 
 ```javascript
 function UnLoadingScreen() {
-    document.getElementById('loading').remove();
+    if (document.getElementById('loading')) document.getElementById('loading').remove();
 }
 ```
 
-간단하게로딩 모달 만들기 끝!
+\
+&#x20;Loading 아이디가 존재하면 실행하고 없으면 실행하지 않는 조건문 추가
 
 
 
