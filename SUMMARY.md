@@ -15,6 +15,7 @@
 * [Select Custom](select-custom.md)
 * [JS로 1000단위 이상 k로 변경방법](js-1000-k.md)
 * [TypeScript](typescript/README.md)
+  * [5분 카운트 다운](typescript/5.md)
   * [clipboard](typescript/clipboard.md)
 * [HTML](https://beomsu-kang.gitbook.io/html/)
 * [CSS](http://127.0.0.1:5000/s/Y9iCnUhM8hctKsJhuG0I/)
