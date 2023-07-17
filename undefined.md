@@ -16,7 +16,8 @@
 &#x3C;button type="button" class="view_btn" data-eye> &#x3C;!-- data-eye 이벤트를 불러올속성-->
     &#x3C;img src="~/images/icons/eye_close.svg" class="close" alt="비밀번호 보지않기" />
     &#x3C;img src="~/images/icons/eye_open.svg" class="open" alt="비밀번호 보기" />
-&#x3C;/button></code></pre>
+&#x3C;/button>
+</code></pre>
 
 #### SCSS
 
@@ -71,5 +72,32 @@ eyeBtnAll.forEach(eyeBtn => {
         viewPassword(eyeBtn);
     })
 })
+
+```
+
+
+
+#### TypeScript
+
+```typescript
+const viewBtn = document.querySelectorAll("[data-eye]");
+
+viewBtn.forEach((button: HTMLElement) => {
+    button.addEventListener("click", (event: MouseEvent) => {
+        console.log(event.currentTarget);
+        const target = event.currentTarget as HTMLButtonElement;
+        const input = target.previousElementSibling as HTMLInputElement;
+        const isPasswordVisible = input.type === "text";
+
+
+        if (isPasswordVisible) {
+            input.type = "password";
+            button.classList.remove("off");
+        } else {
+            input.type = "text";
+            button.classList.add("off");
+        }
+    });
+});
 
 ```

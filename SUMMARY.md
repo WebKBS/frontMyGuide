@@ -17,6 +17,6 @@
 * [TypeScript](typescript/README.md)
   * [clipboard](typescript/clipboard.md)
 * [HTML](https://beomsu-kang.gitbook.io/html/)
-* [CSS](http://localhost:5000/s/Y9iCnUhM8hctKsJhuG0I/)
+* [CSS](http://127.0.0.1:5000/s/Y9iCnUhM8hctKsJhuG0I/)
 * [Javascript](https://beomsu-kang.gitbook.io/javascript/)
-* [JS Labrary](http://localhost:5000/s/bCmTdtO0x0CVxYsKg9W5/)
+* [JS Labrary](http://127.0.0.1:5000/s/bCmTdtO0x0CVxYsKg9W5/)
