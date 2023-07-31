@@ -14,6 +14,7 @@
 * [사이드 메뉴 열고 닫을때 body hidden](body-hidden.md)
 * [Select Custom](select-custom.md)
 * [JS로 1000단위 이상 k로 변경방법](js-1000-k.md)
+* [1000단위 콤마찍기](1000.md)
 * [TypeScript](typescript/README.md)
   * [5분 카운트 다운](typescript/5.md)
   * [clipboard](typescript/clipboard.md)
